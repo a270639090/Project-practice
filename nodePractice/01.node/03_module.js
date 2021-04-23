@@ -6,3 +6,5 @@ let md = require("./02_module.js")
 // console.log(md1.mulFun(1,3));
 // console.log(global)
 console.log(arguments.callee + "");
+console.log(__dirname);
+console.log(__filename);
