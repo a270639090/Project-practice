@@ -1,5 +1,6 @@
 let fs = require("fs")
 
+
 fs.open("helloFs2.txt", "w",(err, fd) => {
   if (err) return
   fs.write(fd, "这是异步写入", err => {
@@ -11,3 +12,5 @@ fs.open("helloFs2.txt", "w",(err, fd) => {
     }
   })
 })
+
+// fs.writeFile()中包含了 fs.open() ---> fs.close()全套操作
