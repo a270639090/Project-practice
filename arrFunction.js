@@ -11,7 +11,9 @@ let arr = [
   { id: "00311", parentId: "0031", name: "节点3-1-1" },
   { id: "00312", parentId: "0031", name: "节点3-1-2" }
 ]
+let arr1 = [1, 2, 3, 4, 5, 1, 1, 1] 
 
+// 将平级结构数组转换为树状结构 递归
 const generateTree = (
   list,
   parenId,
@@ -29,4 +31,23 @@ const generateTree = (
   }, [])
 }
 
-// console.log(generateTree(arr))
+// 返回已size为长度的数组分割的原数组
+function chunk(arr, size =1) {
+  return Array.from(
+    // 决定数组长度,每段为size
+    {
+      length: Math.ceil(arr.length / size)
+    },
+    (v, i) => {
+      return arr.slice(i * size, i * size + size)
+    }
+  )
+}
+// console.log(chunk(arr, 3));
+
+// 检查数组中某元素出现的次数
+function countOccurrences(arr, value) {
+  return arr.reduce((a, v) => (v === value ? a + 1 : a + 0), 0)
+}
+
+console.log(countOccurrences(arr1, 1));
