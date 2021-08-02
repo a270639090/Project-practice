@@ -50,4 +50,4 @@ function countOccurrences(arr, value) {
   return arr.reduce((a, v) => (v === value ? a + 1 : a + 0), 0)
 }
 
-console.log(countOccurrences(arr1, 1));
+// console.log(countOccurrences(arr1, 1));
