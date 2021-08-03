@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "23304644",
+      "name": "渤海财险",
+      "font_class": "bohaicaixian",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "23304645",
+      "name": "安盛天平",
+      "font_class": "anshengtianping",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "23304646",
+      "name": "东吴人寿",
+      "font_class": "dongwurenshou",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    }
+  ]
+}
