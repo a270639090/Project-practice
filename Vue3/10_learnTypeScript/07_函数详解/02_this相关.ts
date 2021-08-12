@@ -22,5 +22,6 @@ const info2 = {
 
 // 隐式绑定
 info2.eating()
+// 显性绑定
 eating.call({name: "why"})
 eating.apply({name: "code"})
