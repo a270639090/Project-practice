@@ -14,11 +14,11 @@ let arr = [
 let arr1 = [1, 2, 3, 4, 5, 1, 1, 1] 
 
 // 将平级结构数组转换为树状结构 递归
-const generateTree = (
+function generateTree (
   list,
   parenId,
   { idName = "id", parentIdName = "parentId", childName = "children" } = {}
-) => {
+) = {
   return list.reduce((pre, cur) => {
     if ((cur[parentIdName] === parenId)) {
       const childern = generateTree(list, cur[idName])
@@ -31,6 +31,7 @@ const generateTree = (
   }, [])
 }
 
+console.log(generateTree(list));
 // 返回已size为长度的数组分割的原数组
 function chunk(arr, size =1) {
   return Array.from(
