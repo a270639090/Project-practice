@@ -18,7 +18,7 @@ function generateTree (
   list,
   parenId,
   { idName = "id", parentIdName = "parentId", childName = "children" } = {}
-) = {
+) {
   return list.reduce((pre, cur) => {
     if ((cur[parentIdName] === parenId)) {
       const childern = generateTree(list, cur[idName])
@@ -31,7 +31,7 @@ function generateTree (
   }, [])
 }
 
-console.log(generateTree(list));
+console.log(generateTree(arr));
 // 返回已size为长度的数组分割的原数组
 function chunk(arr, size =1) {
   return Array.from(
