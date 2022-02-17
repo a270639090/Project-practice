@@ -34,6 +34,7 @@ let sayHi = function func(who) {
 
 // ----------------------------------------------
 
+
 function makeCounter() {
   let count = 0;
 
@@ -50,4 +51,28 @@ function makeCounter() {
 }
 
 let counter = makeCounter()
-// counter.set()
+// counter.set() 进行count设置
+// counter.decrease() 进行countj-1
+
+// --------------------------------------------------
+
+
+/* .. inBetween 和 inArray 的代码
+
+    例如: 
+    let arr = [1, 2, 3, 4, 5, 6, 7];
+    alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+    alert( arr.filter(inArray([1, 2, 10])) ); // 1,2
+*/
+
+let arr = [1, 2, 3, 4, 5, 6, 7]
+
+function inBetween(num1, num2) {
+  return x => x >= num1 && x <= num2
+}
+
+function inArray(arr) {
+  return x => arr.includes(x)
+}
+
+console.log(arr.filter(inBetween(2, 5)));
