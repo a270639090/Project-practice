@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <style>
+    .body {
+      background-color: aliceblue;
+    }
+    .box {
+      margin: 100px auto;
+      width: 200px;
+      height: 200px;
+      box-shadow: 4px 4px;
+      background-color: #fff;
+    }
+    .title {
+      font: 26px;
+    }
+    .text {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    /*
+      区分「『JS表达式』」与「『JS语句』」
+        1. 表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方
+          例：
+            (1). a
+            (2). a+b
+            (3). demo(1)
+            (4). arr.map()
+            (5). function test() {}
+        2. 语句（代码）
+          例：
+            (1). if() {}
+            (2). for() {}
+            (3). swtich() {case: xxx}
+
+    */
+    const data = ['Augular, React, "Vue']
+    const title = '前端JS框架列表'
+    const Vdom = (
+      <div className='box'>
+        <div className="title">{ title }</div>
+        <ul>
+          { <li></li> }
+          <li className='text'>{ data[0] }</li>
+        </ul>
+        </div>
+    )
+
+    ReactDOM.render(Vdom, document.getElementById("app"))
+    
+  </script>
+</body>
+</html>

@@ -75,4 +75,8 @@ function inArray(arr) {
   return x => arr.includes(x)
 }
 
-console.log(arr.filter(inBetween(2, 5)));
+// console.log(arr.filter(inBetween(2, 5)));
+
+const StartScore = rate => "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate);
+const start = StartScore(1);
+console.log(start, "start");
