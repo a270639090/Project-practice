@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    // 创建函数式组件
+    const MyComponent = () => {
+      return <h2>我是函数定义的组件（适用于【简单组件的定义】）</h2>
+    }
+    
+    ReactDOM.render(<MyComponent />, document.getElementById('app'))
+    // ReactDom.render(<MyComponent />.......)做了些什么
+    // 1. react解析MyComponent组件标签，找到MyComponent
+    // 2. 发现组件是使用函数定义的，随后调用该函数，将返回的虚拟Dom转换为真实Dom渲染至页面
+  </script>
+</body>
+</html>
