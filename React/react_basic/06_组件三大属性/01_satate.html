@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    // 创建类式组件
+    class Weather extends React.Component {
+      // constructor调用一次
+      constructor(props) {
+        // console.log("constructor");
+        super(props)
+        this.state = {
+          isHot: false,
+          wind: '北风'
+        }
+
+        // changeWeather的this指向问题
+        this.changeWeather = this.changeWeather.bind(this)
+      }
+
+      changeWeather() {
+        // changeWeather放在哪里？ ---Weather的原型对象上，供实例使用
+        // 由于changeWeather是做为onClick的回调，所以不是通过实例调用的，是直接调用
+        // 类中的方法默认开启了局部的严格模式（use strict），所以changeWeather中的this为undefined
+        console.log('this',this)
+        const isHot = this.state.isHot
+        // *状态必须通过setState进行更新，且更新是一种合并操作不是替换
+        this.setState({isHot: !isHot})
+      }
+      
+      // render 调用 1+n次 初始化1次加更新次数
+      render() {
+        // 读取状态
+        const { isHot, wind } = this.state
+        return <h1 onClick={ this.changeWeather }>今天天气很 {isHot ? '炎热' : '寒冷'}, { wind }</h1>
+      }
+    }
+
+    console.dir(React.Component)
+    ReactDOM.render(<Weather />, document.getElementById('app'))
+    
+  </script>
+</body>
+</html>

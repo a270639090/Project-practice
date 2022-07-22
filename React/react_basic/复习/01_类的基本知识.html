@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_类的基本知识</title>
+</head>
+<body>
+  <script>
+    class Person {
+      constructor(name, age) {
+        this.name = name
+        this.age = age
+      }
+
+      speak() {
+        console.log(`我是${this.name}--${this.age}岁`)
+      }
+    }
+    // p1 = new Person()
+    // p2 = new Person()
+    
+    class Student extends Person {
+      constructor(name, age, grade) {
+        super(name, age)
+        this.grade = grade
+      }
+
+      speak() {
+        console.log(`我是${this.name}--${this.age}岁,已经${this.grade}了`)
+      }
+    }
+
+    class Car {
+      constructor(name, price) {
+        this.name = name
+        this.price = price
+      }
+      
+      wheel = 4
+    }
+
+
+    const car1 = new Car("宝马", 'x8')
+    const s1 = new Student('小鑫', 23, '大五')
+    s1.speak()
+  </script>
+</body>
+</html>
