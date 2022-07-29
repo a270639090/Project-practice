@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
+</head>
+<body>
+  <div id="test1"></div>
+
+  <script type="text/babel">
+    class Demo extends React.Component {
+      btnClick = () => {
+        alert("点击了")
+      }
+
+      render() {
+        console.log('this',this)
+        return (
+          <div>
+            <input type="text" placeholder="点击按钮提示数据" />
+            <button onClick={this.btnClick}>点击提示左侧数据</button> 
+            <input type="text" placeholder="失去焦点提示数据" />
+          </div>
+        )
+      }
+    }
+    
+    ReactDOM.render(<Demo />, document.getElementById("test1"))
+  </script>
+</body>
+</html>

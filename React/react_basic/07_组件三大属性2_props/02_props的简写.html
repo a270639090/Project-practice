@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
+</head>
+<body>
+  <div id="test1"></div>
+
+  <script type="text/babel">
+    // 创建类式组件
+    class Person extends React.Component {
+      constructor(props) {
+        console.log('props',props)
+      }
+      // 对标签进行限制
+      static propTypes = {
+        name: PropTypes.string.isRequired,
+        sex: PropTypes.string,
+        age: PropTypes.number
+      }
+      static defaultProps = {
+        name: "张三"
+      }
+
+      render() {
+        const { name, age, sex } = this.props
+        return (
+          <ul>
+            <li>姓名：{name}</li>
+            <li>性别：{sex}</li>
+            <li>年龄：{age}</li>
+          </ul>
+        )
+      }
+    }
+
+    const p = { age: 20, sex:'19' }
+    ReactDOM.render(<Person {...p} />, document.getElementById('test1'))
+    
+  </script>
+</body>
+</html>
